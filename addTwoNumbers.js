@@ -1,4 +1,4 @@
-//https://leetcode.com/problems/two-sum/description/
+//https://leetcode.com/problems/add-two-numbers/description/
 //节点
 function ListNode(val){
     this.val = val;
