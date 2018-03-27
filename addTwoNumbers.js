@@ -51,8 +51,14 @@ var addTwoNumbers = function(l1, l2) {
         let sum = parseInt(l1.val) + parseInt(l2.val);
         let l = addTwoNumbers(l1.next, l2.next);
         result.val = sum % 10;
-        l.val = l.val + parseInt(sum / 10);
-        result.next = l;
+        //这里还需要判断当前节点值相加是否大于10
+        //是，继续递归直到得出最终链表
+        //否，则直接返回
+        if(sum / 10 > 0){
+            result.next = addTwoNumbers(new ListNode(parseInt(sum / 10)), l)
+        }else{
+            result.next = l;
+        }
     }
     return result;
 };
